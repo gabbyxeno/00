@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confession</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+        }
+        .confession {
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #000;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #message {
+            display: none;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="confession">
+        <h1>Hey Zyba!</h1>
+        <p>There’s something important I’ve been wanting to tell you...</p>
+        <button onclick="showConfession()">Click me</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function showConfession() {
+            const message = "Hi Zyba, There’s something important I’ve been wanting to tell you. I think you’re incredibly pretty, and honestly, I’ve developed strong feelings for you. I kept glancing at you from the back, and I don't think you noticed. I was the one who couldn't stop looking at you. You might not remember, but we were mates during the NCAE. I remember seeing you there, and I think there were a few moments where you noticed me too, even if it was just briefly. I love you not in a way that expects anything from you, but because I genuinely care about you. I know this is our last year before graduation, so I wanted to be honest with you. If you're taken, not ready, or not interested, I completely understand. Whatever your decision, I wish you the best of luck with everything, especially as we both move on to new chapters in our lives. It’s okay if we remain strangers, depending on how you feel, and I’ll respect your choice. Stay blushed <3..";
+            const messageElement = document.getElementById('message');
+            messageElement.style.display = 'block';
+            let i = 0;
+            function typeWriter() {
+                if (i < message.length) {
+                    messageElement.innerHTML += message.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 50);
+                }
+            }
+            typeWriter();
+        }
+    </script>
+</body>
+</html>
